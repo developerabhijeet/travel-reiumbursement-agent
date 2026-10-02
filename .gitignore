@@ -1,0 +1,55 @@
+# --- Python environments -------------------------------------------------------------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+
+# --- Jupyter -------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+.virtual_documents/
+
+# Jupyter writes this next to the notebook while a kernel is attached.
+.jupyter/
+jupyter.log
+
+# --- Generated at runtime ------------------------------------------------------------
+# The dashboard cell regenerates this on every run. It is deliberately NOT named
+# "UI SS_1.png" / "UI SS_2.png": those two are committed deliverables, and if the
+# notebook wrote to them a reviewer's run would silently destroy the screenshots.
+dashboard.png
+
+# Scratch directory the opencode transport runs in.
+/tmp/reimbursement-agent-scratch/
+
+# --- OS / editor noise ----------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Never commit ----------------------------------------------------------------------
+# No credentials are needed to run this notebook, but guard against it anyway.
+.env
+.env.*
+*.pem
+*.key
+secrets.json
+auth.json
+
+
+# --- Deliberately NOT ignored (kept here so the choice is explicit) --------------------
+#   abhijeettiwari.ipynb    the assessed deliverable, committed WITH outputs so the
+#                           dashboard and results render on GitHub without running it
+#   UI SS_1.png             interactive UI screenshot required by the assignment
+#   UI SS_2.png             dashboard screenshot
+#   llm_cache.json          prompt-hash -> response cache. The opencode CLI exposes no
+#                           seed, so this is what makes a re-run reproducible, instant,
+#                           free and offline-capable. Refresh with REFRESH_LLM_CACHE=1.
+#   requirements.txt        reviewer convenience; the notebook also self-installs
+#   .opencode/agent/        the tools-disabled agent definition the notebook writes at
+#                           runtime, committed so it can be read without executing

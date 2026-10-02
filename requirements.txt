@@ -1,0 +1,15 @@
+# Travel Reimbursement Approval Agent -- notebook dependencies.
+# The notebook's first cell installs anything missing, so this file is a convenience.
+
+pydantic>=2          # intake validation and the output contract
+pandas               # claim/result tables and the dashboard data
+matplotlib           # dashboard charts
+
+# Optional.
+ipywidgets           # interactive UI cell; falls back to a static render if absent
+notebook             # to run the notebook locally
+nbconvert            # to execute it headlessly
+
+# Only needed if you set ANTHROPIC_API_KEY to use the Anthropic transport instead of the
+# default free opencode/nemotron model. Not required for the demo.
+# anthropic
